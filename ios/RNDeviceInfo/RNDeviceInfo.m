@@ -177,12 +177,7 @@ RCT_EXPORT_MODULE(RNDeviceInfo)
 
 - (NSString*) userAgent
 {
-#if TARGET_OS_TV
     return @"not available";
-#else
-    UIWebView* webView = [[UIWebView alloc] initWithFrame:CGRectZero];
-    return [webView stringByEvaluatingJavaScriptFromString:@"navigator.userAgent"];
-#endif
 }
 
 - (NSString*) deviceLocale
